@@ -26,9 +26,9 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: `${origin}/og-azheng.png`,
-          width: 1680,
-          height: 945,
+          url: `${origin}/digital-campus-v2.png`,
+          width: 1536,
+          height: 1024,
           alt: "A-Zheng 阿正老師數位教育實驗室形象網站預覽",
         },
       ],
@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "A-Zheng｜阿正老師的數位教育實驗室",
       description: "教育現場的技術實作者，長期分享軟體、雲端、校務系統與 AI 工具經驗。",
-      images: [`${origin}/og-azheng.png`],
+      images: [`${origin}/digital-campus-v2.png`],
     },
     icons: {
       icon: "/favicon.svg",
@@ -59,4 +59,3 @@ export default function RootLayout({
     </html>
   );
 }
-

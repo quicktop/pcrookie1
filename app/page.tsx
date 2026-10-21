@@ -116,54 +116,39 @@ export default async function Home() {
         <nav className="topbar" aria-label="主要導覽">
           <a className="brand" href="#top" aria-label="A-Zheng 首頁">
             <span className="brand-mark">A</span>
-            <span>A-Zheng</span>
+            <span>A-Zheng<small>數位教育實驗室</small></span>
           </a>
           <div className="nav-links">
             <a href="#about">關於</a>
             <a href="#systems">系統</a>
             <a href="#talks">演講</a>
-            <a href="#contact">聯繫</a>
+            <a href="#contact" className="nav-contact">聯繫交流 <span aria-hidden="true">↗</span></a>
           </div>
         </nav>
 
         <div className="hero-layout">
           <div className="hero-copy">
-            <p className="eyebrow">A-Zheng / 陳軒正 / 阿正老師</p>
-            <h1>把資訊技術，做成學校每天都用得上的力量。</h1>
+            <p className="eyebrow hero-eyebrow"><span aria-hidden="true" /> TECHNOLOGY × EDUCATION</p>
+            <p className="hero-name">A-Zheng / 陳軒正 / 阿正老師</p>
+            <h1>把資訊技術，<br />做成學校每天<br /><em>都用得上的力量。</em></h1>
             <p className="hero-lede">
               從電腦教室、校園網路、伺服器管理，到雲端教學、校務系統、AI 工具與免費軟體分享，阿正老師長期站在教育現場，把複雜的技術整理成穩定、好懂、可落地的解法。
             </p>
             <div className="hero-actions" aria-label="主要行動">
-              <a className="primary-button" href="https://pcrookie.net">
-                前往 ㊣軟體玩家
+              <a className="primary-button" href="https://pcrookie.com/" target="_blank" rel="noreferrer">
+                探索 ㊣軟體玩家 <span aria-hidden="true">↗</span>
               </a>
               <a className="secondary-button" href="#systems">
-                看校務系統案例
+                看校務系統案例 <span aria-hidden="true">↓</span>
               </a>
             </div>
           </div>
 
-          <div className="hero-panel" aria-label="A-Zheng 專業摘要">
-            <div className="terminal-card">
-              <div className="terminal-dots" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-              </div>
-              <p className="code-line">profile.load("Chen Hsuan-Cheng")</p>
-              <p className="code-line muted">role: 文華高中總務主任</p>
-              <p className="code-line">focus: network + teaching + systems</p>
-              <p className="code-line accent">mission: make technology useful</p>
-            </div>
-            <div className="signal-grid" aria-hidden="true">
-              <span>Server</span>
-              <span>Cloud</span>
-              <span>Security</span>
-              <span>Teaching</span>
-              <span>Web</span>
-              <span>Open Tools</span>
-            </div>
-          </div>
+          <figure className="hero-panel">
+            <div className="visual-topline"><span className="live-dot" /> DIGITAL CAMPUS LAB <span>01 / EXPLORE</span></div>
+            <img className="hero-illustration" src="/digital-campus-v2.png" width="1536" height="1024" alt="以雲端串連筆記型電腦、校園與伺服器的立體數位教育插圖" fetchPriority="high" />
+            <figcaption className="visual-caption"><span className="visual-symbol" aria-hidden="true">✳</span><span><strong>讓科技，回到人的需要。</strong><small>校園治理 · 雲端教學 · AI 實作</small></span><span className="visual-arrow" aria-hidden="true">↗</span></figcaption>
+          </figure>
         </div>
       </section>
 
@@ -178,7 +163,7 @@ export default async function Home() {
 
       <section className="about-section section" id="about">
         <div className="section-heading">
-          <p className="eyebrow">About</p>
+          <p className="eyebrow">01 / ABOUT THE EDUCATOR</p>
           <h2>不是只懂工具，而是知道學校真正需要什麼。</h2>
         </div>
         <div className="about-grid">
@@ -190,19 +175,22 @@ export default async function Home() {
               這些能力不是停在履歷上，而是一路被帶進校園：讓行政流程能被系統支援，讓老師能把雲端工具帶進教學，也讓一般使用者能透過「㊣軟體玩家」找到可信任的軟體、雲端與 AI 工具經驗。
             </p>
           </div>
-          <div className="portrait-card">
+          <figure className="portrait-card">
             <img
-              src="/og-azheng.png"
-              alt="A-Zheng 阿正老師數位教育實驗室視覺"
+              src="/learning-network-v2.png"
+              width="1536" height="1024" loading="lazy"
+              alt="書本、知識網絡與雲端伺服器串連的科技教育插圖"
             />
-          </div>
+            <figcaption>CONNECTING KNOWLEDGE & POSSIBILITY</figcaption>
+          </figure>
         </div>
       </section>
 
       <section className="section expertise-section" aria-label="專業領域">
         <div className="card-grid">
-          {expertise.map((item) => (
+          {expertise.map((item, index) => (
             <article className="expertise-card" key={item.title}>
+              <span className="expertise-icon" aria-hidden="true">{["⌘", "☁", "⟨/⟩", "✳"][index]}</span>
               <h3>{item.title}</h3>
               <p>{item.copy}</p>
             </article>
@@ -212,21 +200,23 @@ export default async function Home() {
 
       <section className="systems-section section" id="systems">
         <div className="section-heading narrow">
-          <p className="eyebrow">Systems</p>
-          <h2>校務系統不是展示品，是把繁瑣流程變簡單的工具。</h2>
+          <p className="eyebrow">02 / BUILT FOR REAL LIFE</p>
+          <h2>把繁瑣的校園日常，<br />變成簡單好用的系統。</h2>
+          <p className="section-intro">從教學到行政，讓每一個真實需求，都有更有效率的解法。</p>
         </div>
         <div className="systems-board">
           {systems.map((system, index) => (
-            <span key={system.label}>
+            <div className={system.href ? "system-item has-link" : "system-item"} key={system.label}>
               <small>{String(index + 1).padStart(2, "0")}</small>
               {system.href ? (
                 <a className="system-link" href={system.href} target="_blank" rel="noreferrer">
                   {system.label}
+                  <b aria-hidden="true">↗</b>
                 </a>
               ) : (
                 system.label
               )}
-            </span>
+            </div>
           ))}
         </div>
       </section>
@@ -234,7 +224,7 @@ export default async function Home() {
       <section className="section talks-section" id="talks">
         <div className="split-heading">
           <div>
-            <p className="eyebrow">Talks & Workshops</p>
+            <p className="eyebrow">03 / TALKS & WORKSHOPS</p>
             <h2>把工具講到能上手，把經驗講到能帶回現場。</h2>
           </div>
           <p>
@@ -251,7 +241,7 @@ export default async function Home() {
       <section className="section works-section" id="works">
         <div className="split-heading">
           <div>
-            <p className="eyebrow">Books & Publications</p>
+            <p className="eyebrow">04 / BOOKS & PUBLICATIONS</p>
             <h2>把長期累積的軟體經驗，整理成可以帶走的作品。</h2>
           </div>
           <p>
@@ -264,6 +254,7 @@ export default async function Home() {
               <div className="work-cover-wrap">
                 <img
                   className="work-cover"
+                  loading="lazy"
                   src={publication.image}
                   alt={`${publication.titles.join("、")} 封面`}
                 />
@@ -283,7 +274,7 @@ export default async function Home() {
 
       <section className="timeline-section section" aria-label="經歷">
         <div className="section-heading">
-          <p className="eyebrow">Experience</p>
+          <p className="eyebrow">05 / EXPERIENCE</p>
           <h2>一路從資訊現場走到行政決策，把兩邊的語言接起來。</h2>
         </div>
         <div className="timeline">
@@ -299,12 +290,12 @@ export default async function Home() {
 
       <section className="recognition-section section" aria-label="獲獎與報導">
         <div className="recognition-copy">
-          <p className="eyebrow">Recognition</p>
+          <p className="eyebrow">06 / RECOGNITION</p>
           <h2>技術、教學與分享，留下被看見的痕跡。</h2>
         </div>
         <div className="recognition-layout">
           <figure className="press-card">
-            <img src="/udn20100714.png.webp" alt="2010 年聯合報報導：宅老師「軟體玩家」萬人迷" />
+            <img src="/udn20100714.png.webp" loading="lazy" alt="2010 年聯合報報導：宅老師「軟體玩家」萬人迷" />
             <figcaption>2010 聯合報地方新聞報導：宅老師「軟體玩家」萬人迷</figcaption>
           </figure>
           <div className="recognition-list">
@@ -317,15 +308,16 @@ export default async function Home() {
 
       <section className="contact-section" id="contact">
         <div>
-          <p className="eyebrow">Connect</p>
-          <h2>想了解阿正老師的文章、系統與研習經驗，可以從這裡開始。</h2>
+          <p className="eyebrow">LET’S CONNECT</p>
+          <h2>讓好的工具與經驗，<br />走進更多人的日常。</h2>
+          <p className="contact-copy">閱讀文章、交流教學，或一起探索科技的新可能。</p>
         </div>
         <div className="contact-actions">
-          <a className="primary-button light" href="https://pcrookie.net">
-            ㊣軟體玩家
+          <a className="primary-button light" href="https://pcrookie.com/" target="_blank" rel="noreferrer">
+            ㊣軟體玩家 <span aria-hidden="true">↗</span>
           </a>
-          <a className="secondary-button light-outline" href="https://pcrookie.net/#about">
-            原始介紹
+          <a className="secondary-button light-outline" href="#about">
+            認識阿正老師
           </a>
         </div>
         <div className="social-row" aria-label="官方社群">
@@ -336,6 +328,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
+      <footer className="site-footer"><a href="#top" className="footer-brand">A-Zheng<span>數位教育實驗室</span></a><p>讓技術有溫度，讓教育有更多可能。</p><a href="#top">回到頂端 ↑</a></footer>
     </main>
   );
 }
