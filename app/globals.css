@@ -165,3 +165,8 @@ h3 { font-size: 18px; line-height: 1.55; font-weight: 700; }
  .work-card { display: block; } .work-cover-wrap { aspect-ratio: 4/3; padding: 28px; } .work-card-copy { padding: 24px; } .work-title-list h3 { font-size: 15px; }
  .contact-section { padding: 30px 24px; } .contact-section h2 { font-size: 25px; } .contact-copy { font-size: 13px; } .contact-actions { flex-direction: column; } .social-row { gap: 20px; flex-wrap: wrap; } .footer-brand span { display: block; margin: 5px 0 0; }
 }
+
+.book-link { display: grid; gap: 6px; padding: 3px 0; }
+.book-link small { color: var(--teal); font-size: 11px; font-weight: 500; }
+.book-link:hover > span { color: var(--teal); text-decoration: underline; text-underline-offset: 4px; }
+.book-link:focus-visible { border-radius: 4px; }

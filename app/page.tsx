@@ -74,6 +74,15 @@ const publications = [
   },
 ];
 
+const bookLinks: Record<string, { href: string; store: string }> = {
+  "全民都要的 Google 懶人包": { href: "https://www.books.com.tw/products/0010451222", store: "博客來" },
+  "iPad App 懶人包：4 大站長聯手出擊": { href: "https://www.eslite.com/product/1001299212128491", store: "誠品線上" },
+  "WordPress 部落格架設與經營：站長親授的十堂課": { href: "https://www.eslite.com/product/1001122231817130", store: "誠品線上" },
+  "站長親授！WordPress 3.0 部落格架站十堂課": { href: "https://www.cite.com.tw/book?id=17826", store: "城邦讀書花園" },
+  "Best Download！部落客評選的最優軟體殿堂": { href: "https://www.books.com.tw/products/0010435801", store: "博客來" },
+  "社群情報力": { href: "https://www.tenlong.com.tw/products/9789861992945", store: "天瓏網路書店" },
+};
+
 const timeline = [
   {
     period: "89-101",
@@ -263,7 +272,12 @@ export default async function Home() {
                 <span>{publication.note}</span>
                 <div className="work-title-list">
                   {publication.titles.map((title) => (
-                    <h3 key={title}>{title}</h3>
+                    <h3 key={title}>
+                      <a className="book-link" href={bookLinks[title].href} target="_blank" rel="noopener noreferrer" aria-label={`${title}（${bookLinks[title].store}，另開分頁）`}>
+                        <span>{title}</span>
+                        <small>{bookLinks[title].store} <span aria-hidden="true">↗</span></small>
+                      </a>
+                    </h3>
                   ))}
                 </div>
               </div>
@@ -332,4 +346,3 @@ export default async function Home() {
     </main>
   );
 }
-
